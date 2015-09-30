@@ -1,2 +1,2 @@
-# AsyncEnumerable
-A simple asynchronous enumerable implementation for .NET
+# EasyAsyncEnumerable
+An easy-to-use async enumerable implementation for .NET
