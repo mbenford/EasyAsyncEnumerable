@@ -21,12 +21,13 @@ namespace EasyAsyncEnumerable
         /// </summary>
         /// <param name="value">Value to be enqueued.</param>
         /// <returns>An instance of the <see cref="AsyncYielder{T}"/> class so further calls can be chained.</returns>
-        public AsyncYielder<T> Return(T value)
+        public void Return(T value)
         {
             EnsureIsNotStopped();
+            EnsureIsNotStopping();
+
             values.Enqueue(value);
             State = YielderState.Running;
-            return this;
         }
 
         /// <summary>
@@ -35,18 +36,29 @@ namespace EasyAsyncEnumerable
         public void Break()
         {
             EnsureIsNotStopped();
-            State = YielderState.Stopped;
+            EnsureIsNotStopping();
+
+            State = values.Count == 0 ? YielderState.Stopped : YielderState.Stopping;
         }
 
         internal T GetNext()
         {
             EnsureIsNotStopped();
+
             T value = values.Dequeue();
-            State = values.Count == 0 ? YielderState.Idle : YielderState.Running;
+            if (values.Count == 0)
+            {
+                State = State == YielderState.Stopping ? YielderState.Stopped : YielderState.Idle;
+            }
             return value;
         }
 
         internal YielderState State { get; private set; }
+
+        private void EnsureIsNotStopping()
+        {
+            if (State == YielderState.Stopping) throw new InvalidOperationException("Yielder is stopping");
+        }
 
         private void EnsureIsNotStopped()
         {
@@ -58,6 +70,7 @@ namespace EasyAsyncEnumerable
     {
         Idle,
         Running,
+        Stopping,
         Stopped
     }
 }
