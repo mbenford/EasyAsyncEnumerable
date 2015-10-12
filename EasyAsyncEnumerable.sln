@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAsyncEnumerable", "EasyAsyncEnumerable\EasyAsyncEnumerable.csproj", "{1C3B5239-F98A-4C75-9B98-83C3E9E99560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{68E6AD07-194C-4449-8533-4DE6F20A9AD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1C3B5239-F98A-4C75-9B98-83C3E9E99560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C3B5239-F98A-4C75-9B98-83C3E9E99560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C3B5239-F98A-4C75-9B98-83C3E9E99560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E6AD07-194C-4449-8533-4DE6F20A9AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E6AD07-194C-4449-8533-4DE6F20A9AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E6AD07-194C-4449-8533-4DE6F20A9AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E6AD07-194C-4449-8533-4DE6F20A9AD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

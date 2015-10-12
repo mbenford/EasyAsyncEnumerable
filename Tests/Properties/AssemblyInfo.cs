@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EasyAsyncEnumerable")]
-[assembly: AssemblyDescription("An easy-to-use async enumerable implementation for .NET")]
+[assembly: AssemblyTitle("Tests")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AsyncAsyncEnumerable")]
-[assembly: AssemblyCopyright("Copyright © 2015 Michael Benford")]
+[assembly: AssemblyProduct("Tests")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("627f310f-1ea4-45b0-8884-786340337ee1")]
+[assembly: Guid("e5703e6b-41a5-4bcb-adf2-36fbe43210f3")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,7 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
-
-[assembly: InternalsVisibleTo("EasyAsyncEnumerable.Tests")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
