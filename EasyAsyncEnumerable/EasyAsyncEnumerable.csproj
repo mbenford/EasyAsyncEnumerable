@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IYielder.cs" />
     <Compile Include="YieldableAsyncEnumerator.cs" />
     <Compile Include="AsyncEnumerable.cs" />
-    <Compile Include="AsyncYielder.cs" />
+    <Compile Include="BufferedYielder.cs" />
     <Compile Include="IAsyncEnumerable.cs" />
     <Compile Include="IAsyncEnumerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

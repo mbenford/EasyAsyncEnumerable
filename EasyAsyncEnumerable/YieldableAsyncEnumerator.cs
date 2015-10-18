@@ -4,15 +4,15 @@ using System.Threading.Tasks;
 
 namespace EasyAsyncEnumerable
 {
-    class YieldableAsyncEnumerator<T> : IAsyncEnumerator<T>
+    sealed class YieldableAsyncEnumerator<T> : IAsyncEnumerator<T>
     {
-        private readonly Func<AsyncYielder<T>, CancellationToken, Task> producer;
-        private readonly AsyncYielder<T> yielder;
+        private readonly Func<IYielder<T>, CancellationToken, Task> producer;
+        private readonly BufferedYielder<T> yielder;
 
-        public YieldableAsyncEnumerator(Func<AsyncYielder<T>, CancellationToken, Task> producer)
+        public YieldableAsyncEnumerator(Func<IYielder<T>, CancellationToken, Task> producer)
         {
             this.producer = producer;
-            yielder = new AsyncYielder<T>();
+            yielder = new BufferedYielder<T>();
         }
 
         public async Task<bool> MoveNextAsync(CancellationToken cancellationToken)

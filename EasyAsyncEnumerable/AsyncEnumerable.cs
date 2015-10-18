@@ -16,7 +16,7 @@ namespace EasyAsyncEnumerable
         /// <typeparam name="T">The type of objects to enumerate.</typeparam>
         /// <param name="producer">The producer function that will be invoked in order to populate the async enumerable.</param>
         /// <returns>An instance of an asynchronous enumerable.</returns>
-        public static IAsyncEnumerable<T> Create<T>(Func<AsyncYielder<T>, CancellationToken, Task> producer)
+        public static IAsyncEnumerable<T> Create<T>(Func<IYielder<T>, CancellationToken, Task> producer)
         {
             var enumerator = new YieldableAsyncEnumerator<T>(producer);
             return new AnonymousAsyncEnumerable<T>(enumerator);
