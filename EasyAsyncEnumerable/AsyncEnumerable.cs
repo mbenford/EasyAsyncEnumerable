@@ -57,14 +57,14 @@ namespace EasyAsyncEnumerable
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source">Enumerable to be iterated over.</param>
-        /// <param name="action">Action to be called asynchronously at every iteration.</param>
+        /// <param name="function">Function to be called asynchronously at every iteration.</param>
         /// <returns>A <see cref="Task"/>.</returns>
-        public static async Task ForEachAsync<T>(this IAsyncEnumerable<T> source, Func<T, Task> action)
+        public static async Task ForEachAsync<T>(this IAsyncEnumerable<T> source, Func<T, Task> function)
         {
             var enumerator = source.GetEnumerator();
             while (await enumerator.MoveNextAsync(CancellationToken.None))
             {
-                await action(enumerator.Current);
+                await function(enumerator.Current);
             }
         }
 
